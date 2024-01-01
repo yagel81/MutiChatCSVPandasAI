@@ -10,12 +10,14 @@ import matplotlib.pyplot as plt
 
 load_dotenv()
 
-headers = {
-    "authorization": st.secrets["openai_api_key"]
-}
+# headers = {
+#     "authorization": st.secrets["openai_api_key"]
+# }
+
+openaikey = st.secrets["openai_api_key"]
 
 # openai_api_key = os.getenv("OPENAI_API_KEY")
-os.environ["OPENAI_API_KEY"] = openai_api_key
+os.environ["OPENAI_API_KEY"] = openaikey
 
 def chat_with_csv(df,prompt):
     llm = OpenAI(api_token=openai_api_key)
